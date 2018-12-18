@@ -1,5 +1,21 @@
+import { NgModule, Inject } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserComponent } from './model/user/user.component';
+import { UserService } from './user.service';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        // import HttpClientModule after BrowserModule.
+        HttpClientModule,
+    ],
+    declarations: [
+        AppComponent,
+    ],
+    bootstrap: [AppComponent]
+})
 
 @Component({
     selector: 'app-root',
@@ -7,7 +23,16 @@ import { UserComponent } from './model/user/user.component';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    users: UserComponent[] = [{ username: 'admin', id: 201 },{ username: 'neil', id: 202 },{ username: 'eric', id: 203 }];
+
+    users: UserComponent[];
 
     title = 'UserAdminApp';
+
+    constructor(private userService: UserService) { }
+
+    getUsers() {
+        console.warn('getting users');
+
+        return this.userService.getUsers(); // .subscribe((urs: UserComponent[]) => this.users = urs);
+    }
 }

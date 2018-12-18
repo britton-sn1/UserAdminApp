@@ -9,5 +9,5 @@
         <th>User name</th>
         <th>Id</th>
     </tr>
-    <tr *ngFor="let user of users"><td>{{user.username}}</td><td>{{user.id}}</td></tr>
+    <tr *ngFor="let user of getUsers()"><td>{{user.username}}</td><td>{{user.id}}</td></tr>
 </table>
