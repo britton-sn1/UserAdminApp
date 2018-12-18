@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+    json(): any {
+        throw new Error("Method not implemented.");
+    }
     username: string;
     id: number;
 

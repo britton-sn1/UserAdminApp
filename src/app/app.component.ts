@@ -33,6 +33,6 @@ export class AppComponent {
     getUsers() {
         console.warn('getting users');
 
-        return this.userService.getUsers(); // .subscribe((urs: UserComponent[]) => this.users = urs);
+        return this.userService.getUsers();
     }
 }
