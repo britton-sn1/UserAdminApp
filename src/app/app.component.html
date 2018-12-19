@@ -9,6 +9,10 @@
         <th>User name</th>
         <th>Id</th>
     </tr>
-    <tr *ngFor="let user of users"><td>{{user.username}}</td><td>{{user.id}}</td></tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.username}}</td>
+        <td>{{user.id}}</td>
+        <td><a href="#" (click)="delUser(user)">-</a></td>
+    </tr>
 </table>
 

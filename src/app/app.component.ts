@@ -33,16 +33,17 @@ export class AppComponent {
     title = 'UserAdminApp';
 
     constructor(private userService: UserService) {
-        const tmr = timer(0, 2000);
+        const tmr = timer(0, 15000); // start delay, interval ms
         tmr.subscribe(t => this.getUsers());
-    }
-
-    ngInit() {
     }
 
     getUsers() {
         console.warn('getting users');
 
         return this.userService.getUsers().subscribe(usrs => this.users = usrs);
+    }
+
+    public delUser(user: UserComponent) {
+        this.userService.delUser(user).subscribe(usrs => this.users = usrs);
     }
 }
