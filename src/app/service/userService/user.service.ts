@@ -21,6 +21,13 @@ export class UserService {
         console.warn('deleting user ' + user.username);
         return this.http.get<UserComponent[]>(
             'http://localhost:8980/UserAdminAppServer/UserAdminService?id=' + user.id);
+    }
+
+
+    reset() {
+        console.warn('reseting app');
+        return this.http.get<UserComponent[]>(
+            'http://localhost:8980/UserAdminAppServer/UserAdminService?reset=true');
 
     }
 }

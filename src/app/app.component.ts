@@ -46,4 +46,8 @@ export class AppComponent {
     public delUser(user: UserComponent) {
         this.userService.delUser(user).subscribe(usrs => this.users = usrs);
     }
+
+    public reset() {
+        this.userService.reset().subscribe(usrs => this.users = usrs);
+    }
 }
