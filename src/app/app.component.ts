@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserComponent } from './model/user/user.component';
-import { UserService } from './user.service';
+import { UserService } from './service/userService/user.service';
 import { timer } from 'rxjs';
 
 
