@@ -9,12 +9,11 @@ import { Observable } from 'rxjs';
 export class UserService {
 
     constructor(
-        private http: HttpClient,
-        private http2: HttpClient
+        private http: HttpClient
     ) { }
 
     getUsers(): Observable<UserComponent[]> {
-        return this.http2.get<UserComponent[]>(
+        return this.http.get<UserComponent[]>(
             'http://localhost:8980/UserAdminAppServer/UserAdminService');
     }
 
