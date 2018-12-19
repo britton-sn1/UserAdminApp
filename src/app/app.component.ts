@@ -24,11 +24,13 @@ import { UserService } from './user.service';
 })
 export class AppComponent {
 
-    users: UserComponent[];
+    public users: UserComponent[];
 
     title = 'UserAdminApp';
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService) {
+        this.getUsers().subscribe(usrs => this.users = usrs);
+    }
 
     getUsers() {
         console.warn('getting users');
