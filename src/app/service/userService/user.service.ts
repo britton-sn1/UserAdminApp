@@ -8,26 +8,27 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
+    userServiceEndpoing = 'http://localhost:8980/UserAdminAppServer/UserAdminService';
+
     constructor(
         private http: HttpClient
     ) { }
 
     getUsers(): Observable<UserComponent[]> {
-        return this.http.get<UserComponent[]>(
-            'http://localhost:8980/UserAdminAppServer/UserAdminService');
+        return this.http.get<UserComponent[]>(this.userServiceEndpoing);
     }
 
     delUser(user: UserComponent): Observable<UserComponent[]> {
         console.warn('deleting user ' + user.username);
         return this.http.get<UserComponent[]>(
-            'http://localhost:8980/UserAdminAppServer/UserAdminService?id=' + user.id);
+            this.userServiceEndpoing + '?id=' + user.id);
     }
 
 
     reset() {
         console.warn('reseting app');
         return this.http.get<UserComponent[]>(
-            'http://localhost:8980/UserAdminAppServer/UserAdminService?reset=true');
+            this.userServiceEndpoing + '?reset=true');
 
     }
 }
