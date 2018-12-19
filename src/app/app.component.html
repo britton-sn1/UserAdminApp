@@ -8,11 +8,14 @@
     <tr>
         <th>User name</th>
         <th>Id</th>
+        <th>Delete</th>
     </tr>
     <tr *ngFor="let user of users">
         <td>{{user.username}}</td>
         <td>{{user.id}}</td>
-        <td><a href="#" (click)="delUser(user)">-</a></td>
+        <td><a href="#" (click)="delUser(user)">
+            <img src="../assets/del.png" alt="HTML tutorial" style="width:16px;height:16px;border:0;">
+        </a></td>
     </tr>
 </table>
 
