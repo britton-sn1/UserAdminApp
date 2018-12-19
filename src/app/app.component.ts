@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserComponent } from './model/user/user.component';
 import { UserService } from './user.service';
+import { timer } from 'rxjs';
+
 
 @NgModule({
     imports: [
@@ -26,15 +28,21 @@ export class AppComponent {
 
     public users: UserComponent[];
 
+
+
     title = 'UserAdminApp';
 
     constructor(private userService: UserService) {
-        this.getUsers().subscribe(usrs => this.users = usrs);
+        const tmr = timer(0, 2000);
+        tmr.subscribe(t => this.getUsers());
+    }
+
+    ngInit() {
     }
 
     getUsers() {
         console.warn('getting users');
 
-        return this.userService.getUsers();
+        return this.userService.getUsers().subscribe(usrs => this.users = usrs);
     }
 }
