@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-@Component({
-    selector: 'app-user',
-    templateUrl: './user.component.html',
-    styleUrls: ['./user.component.css']
+
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: []
 })
+
 export class UserComponent implements OnInit {
-    json(): any {
-        throw new Error("Method not implemented.");
-    }
     username: string;
     id: number;
 
