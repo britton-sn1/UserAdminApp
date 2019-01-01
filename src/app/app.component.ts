@@ -28,13 +28,12 @@ export class AppComponent {
 
     public users: UserComponent[];
 
-
-
     title = 'UserAdminApp';
 
     constructor(private userService: UserService) {
-        const tmr = timer(0, 15000); // start delay, interval ms
-        tmr.subscribe(t => this.getUsers());
+//        const tmr = timer(0, 15000); // start delay, interval ms
+//        tmr.subscribe(t => this.getUsers());
+        this.getUsers();
     }
 
     getUsers() {

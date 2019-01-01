@@ -1,7 +1,11 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
+@Component({
+  selector: 'app-user-detail',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
+})
 
 @NgModule({
   imports: [
@@ -11,6 +15,9 @@ import { CommonModule } from '@angular/common';
 })
 
 export class UserComponent implements OnInit {
+
+    @Input() user: UserComponent;
+
     username: string;
     id: number;
 
