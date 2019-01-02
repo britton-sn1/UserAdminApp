@@ -23,10 +23,8 @@
 <a href="#" (click)="reset()">Reset</a>
 </div>
 <div>&nbsp;</div>
-<div>
-<a href="./model/user/user.component.html">Add</a>
-</div>
-<div>
-    <app-user-detail></app-user-detail>
+<div >
+    <Label style="margin: 4px">Username<input style="margin: 24px" #newUserName></Label>
+    <input type="submit" style="margin: 14px" (click)="addNewUser(newUserName.value); newUserName.value=''" value="Add">
 </div>
 

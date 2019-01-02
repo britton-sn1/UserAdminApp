@@ -49,4 +49,8 @@ export class AppComponent {
     public reset() {
         this.userService.reset().subscribe(usrs => this.users = usrs);
     }
+
+    public addNewUser(userName) {
+        this.userService.addNewUser(userName).subscribe(usrs => this.users = usrs);
+    }
 }

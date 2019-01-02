@@ -31,4 +31,8 @@ export class UserService {
             this.userServiceEndpoint + '?reset=true');
 
     }
+
+    addNewUser(newUser: string) {
+        return this.http.get<UserComponent[]>(this.userServiceEndpoint + '?add=' + newUser);
+    }
 }
