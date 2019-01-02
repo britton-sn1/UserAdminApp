@@ -19,7 +19,8 @@ import { RouterModule} from '@angular/router';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot([{path: 'userDetails', component: UserComponent}])
+    RouterModule.forRoot([{path: 'userDetails', component: UserComponent}],
+      { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
