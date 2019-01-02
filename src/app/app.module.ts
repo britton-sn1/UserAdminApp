@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './model/user/user.component';
+import { RouterModule} from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { UserComponent } from './model/user/user.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([{path: 'userDetails', component: UserComponent}])
   ],
   providers: [],
   bootstrap: [AppComponent]

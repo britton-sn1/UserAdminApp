@@ -54,11 +54,4 @@
             "webRoot": "${workspaceFolder}"
         }
     ]
-}            "name": "Launch Chrome UserAdminApp on Angular CLI Server (2)",
-"type": "chrome",
-"request": "launch",
-"url": "http://localhost:4200/#",
-"webRoot": "${workspaceFolder}"
-}
-]
 }
