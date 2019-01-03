@@ -10,24 +10,22 @@
     </tr>
     <tr>
       <td>First Name:&nbsp;</td>
-      <td>{{user.firstName}}</td>
+      <td><input [(ngModel)]="user.firstName"/></td>
     </tr>
     <tr>
       <td>Last Name:&nbsp;</td>
-      <td>{{user.lastName}}</td>
+      <td><input [(ngModel)]="user.lastName"/></td>
     </tr>
     <tr>
       <td>email:&nbsp;</td>
-      <td>{{user.email}}</td>
+      <td><input [(ngModel)]="user.email"/></td>
     </tr>
-    <!-- <tr>
-      <td>username</td>
-      <td>
-        <input [(ngModel)]="user.username" />
-      </td>
-    </tr> -->
   </table>
  </div>
- <div>
+ <div><span>
  <input type="submit" style="margin: 14px" (click)="goBack()" value="Back">
+ </span>
+ <span>
+ <button (click)="putUser(user)" >Update</button>
+ </span>
 </div>

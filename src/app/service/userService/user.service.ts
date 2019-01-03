@@ -38,4 +38,9 @@ export class UserService {
     addNewUser(newUser: string) {
         return this.http.get<UserComponent[]>(this.userServiceEndpoint + '?add=' + newUser);
     }
+
+    putUser(user: UserComponent) {
+        console.warn('puting user ' + user.id);
+        this.http.put<UserComponent>(this.userServiceEndpoint, user).subscribe(u => console.warn('put user ' + u.id));
+    }
 }

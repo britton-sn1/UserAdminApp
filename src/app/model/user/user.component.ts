@@ -48,4 +48,9 @@ export class UserComponent implements OnInit {
     updateUser(user: UserComponent) {
         this.user = user;
     }
+
+    putUser(user: UserComponent): void {
+        this.userService.putUser(user);
+        this.goBack();
+    }
 }

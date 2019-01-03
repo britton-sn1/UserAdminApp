@@ -2,6 +2,9 @@
   <tr>
     <th>User name</th>
     <th>Id</th>
+    <th>First Name</th>
+    <th>Second Name</th>
+    <th>Email Address</th>
     <th>Delete</th>
   </tr>
   <tr *ngFor="let user of users">
@@ -11,6 +14,9 @@
       </a>
     </td>
     <td>{{user.id}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
     <td>
       <a href="#" (click)="delUser(user)">
         <img src="../assets/del.png" alt="HTML tutorial" style="width:16px;height:16px;border:0;">
@@ -20,7 +26,7 @@
 </table>
 <div>&nbsp;</div>
 <div>
-  <a href="#" (click)="reset()">Reset</a>
+  <button (click)="reset()">Reset</button>
 </div>
 <div>&nbsp;</div>
 <div>
