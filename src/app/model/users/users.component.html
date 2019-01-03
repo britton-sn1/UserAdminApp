@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>User name</th>
+    <th>Id</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>
+      <a routerLink="userDetails/{{user.id}}">
+        {{user.username}}
+      </a>
+    </td>
+    <td>{{user.id}}</td>
+    <td>
+      <a href="#" (click)="delUser(user)">
+        <img src="../assets/del.png" alt="HTML tutorial" style="width:16px;height:16px;border:0;">
+      </a>
+    </td>
+  </tr>
+</table>
+<div>&nbsp;</div>
+<div>
+  <a href="#" (click)="reset()">Reset</a>
+</div>
+<div>&nbsp;</div>
+<div>
+  <Label style="margin: 4px">Username
+    <input style="margin: 24px" #newUserName>
+  </Label>
+  <input type="submit" style="margin: 14px" (click)="addNewUser(newUserName.value); newUserName.value=''" value="Add">
+</div>

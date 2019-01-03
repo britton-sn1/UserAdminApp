@@ -5,24 +5,30 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './model/user/user.component';
-import { RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { UsersComponent } from './model/users/users.component';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    HttpClientModule,
-    RouterModule.forRoot([{path: 'userDetails', component: UserComponent}],
-      { enableTracing: true })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UserComponent,
+        UsersComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+            { path: 'userDetails/:user', component: UserComponent },
+            { path: '**', component: UsersComponent }
+        ]
+            // ,          { enableTracing: true }
+        )
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

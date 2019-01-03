@@ -20,7 +20,7 @@ export class UserService {
 
     delUser(user: UserComponent): Observable<UserComponent[]> {
         console.warn('deleting user ' + user.username);
-        return this.http.get<UserComponent[]>(
+        return this.http.delete<UserComponent[]>(
             this.userServiceEndpoint + '?id=' + user.id);
     }
 
