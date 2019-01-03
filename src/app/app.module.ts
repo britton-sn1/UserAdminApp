@@ -22,7 +22,7 @@ import { UsersComponent } from './model/users/users.component';
         HttpModule,
         HttpClientModule,
         RouterModule.forRoot([
-            { path: 'userDetails/:user', component: UserComponent },
+            { path: 'userDetails/:id', component: UserComponent },
             { path: '**', component: UsersComponent }
         ]
             // ,          { enableTracing: true }

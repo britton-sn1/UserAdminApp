@@ -18,12 +18,15 @@ export class UserService {
         return this.http.get<UserComponent[]>(this.userServiceEndpoint);
     }
 
-    delUser(user: UserComponent): Observable<UserComponent[]> {
-        console.warn('deleting user ' + user.username);
-        return this.http.delete<UserComponent[]>(
-            this.userServiceEndpoint + '?id=' + user.id);
+    getUser(id: string): Observable<UserComponent> {
+        return this.http.get<UserComponent>(this.userServiceEndpoint + '?id=' + id);
     }
 
+    delUser(delUser: UserComponent): Observable<UserComponent[]> {
+        console.warn('deleting user ' + delUser.username);
+        return this.http.delete<UserComponent[]>(
+            this.userServiceEndpoint + '?id=' + delUser.id);
+    }
 
     reset() {
         console.warn('reseting app');

@@ -18,11 +18,14 @@ import { UserService } from '../../service/userService/user.service';
 
 export class UserComponent implements OnInit {
 
-    @Input()
-    userId: number;
+    // @Input()
+    user: UserComponent;
 
     username: string;
     id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
 
     constructor(private route: ActivatedRoute,
         private userService: UserService,
@@ -30,9 +33,19 @@ export class UserComponent implements OnInit {
 
 
     ngOnInit() {
+        this.getUser();
+    }
+
+    getUser(): void {
+        const id =  this.route.snapshot.paramMap.get('id');
+        this.userService.getUser(id).subscribe(user => this.updateUser(user));
     }
 
     goBack(): void {
         this.location.back();
+    }
+
+    updateUser(user: UserComponent) {
+        this.user = user;
     }
 }
